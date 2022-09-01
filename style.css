@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --regular-text-size: 12pt;
+    --detail-text-size: 10pt;
+    --h1-text-size: 24pt;
+    --font-family: 'Roboto', sans-serif;
+    --padding-top-border: 2em;
+    --padding-bottom-border: 2em;
+    --padding-main-side-borders: 3em;
+
+    --dark-bg-color: rgb(31, 8, 85);
+    --light-bg-color: rgb(56, 23, 134);
+    --main-text-color: white;
+    --sub-text-color: rgb(149, 130, 201);
+
+    --bold-text-weight: 700;
+    --light-text-weight: 100;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: var(--regular-text-size);
+    color: var(--main-text-color);
+    font-family: var(--font-family);
+    font-weight: var(--light-text-weight);
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    margin: 1.5em 0 1.5em 0;
+}
+
+.navContainer > ul > li:nth-child(3){
+    color: var(--main-text-color);
+    font-weight: var(--bold-text-weight);
+}
+
+h1 {
+    font-size: var(--h1-text-size);
+    font-weight: var(--light-text-weight);
+    padding: 0 0 2rem 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: var(--regular-text-size);
+    font-weight: var(--bold-text-weight);
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.gridContainer {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+
+.mainContainer {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.mainContent {
+    background-color: var(--dark-bg-color);
+    padding: var(--padding-top-border) var(--padding-main-side-borders) var(--padding-bottom-border) var(--padding-main-side-borders);
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "views comments likes subscriptions"
+                         "somePlatforms somePlatforms somePlatforms profit"
+                         "analytics analytics analytics profit"
+                         "analytics analytics analytics profit";
+}
+
+.cards > div {
+    border: 1px solid greenyellow;
+}
+
+.views{
+    grid-area: views;
+}
+
+.comments {
+    grid-area: comments;
+}
+
+.likes {
+    grid-area: likes;
+}
+
+.subscriptions {
+    grid-area: subscriptions;
+}
+
+.somePlatforms {
+    grid-area: somePlatforms;
+}
+
+.profit {
+    grid-area: profit;
+}
+
+.analytics {
+    grid-area: analytics;
+}
+
+.sidebar {
+    background-color: var(--light-bg-color);
+    color: var(--sub-text-color);
+    padding: var(--padding-top-border) 1em var(--padding-bottom-border) 1em;
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+}
+
+.sidebar > div {
+    border: 1px solid white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-bg-color);
+    padding: 1em var(--padding-main-side-borders) 1em var(--padding-main-side-borders);
+}
+
+input[type="search"]{
+    appearance: none;
+    -webkit-appearance: none;
+    color: white;
+    font-size: var(--regular-text-size);
+    background-color: var(--dark-bg-color);
+    border: 1px solid var(--sub-text-color);
+    width: 25em;
+    height: 3em;
+    transition: 0.1s;
+}
+
+/* input[type="search"]:focus{
+    appearance: none;
+    border: 1px solid var(--sub-text-color);
+    width: 25em;
+} */
